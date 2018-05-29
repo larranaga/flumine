@@ -1,0 +1,23 @@
+{
+  "name": "flumine",
+  "version": "1.0.0",
+  "description": "Change impact analysis tool for Typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larranaga/flumine.git"
+  },
+  "author": "Nicolas Larranaga Cifuentes (nlarranagac@unal.edu.co)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/larranaga/flumine/issues"
+  },
+  "homepage": "https://github.com/larranaga/flumine#readme",
+  "dependencies": {
+    "@types/node": "^10.1.3",
+    "typescript": "^2.8.3"
+  }
+}
