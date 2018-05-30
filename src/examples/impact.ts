@@ -15,9 +15,13 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
                         /*modifiers*/ undefined,
                         /*importClause*/ ts.createImportClause(
                             /*name*/ undefined,
-                    ts.createNamespaceImport(ts.createIdentifier("i0"))
+                            ts.createNamedImports(
+                                [ts.createImportSpecifier
+                                    (ts.createIdentifier("appendFileSync"), 
+                                    ts.createIdentifier("myAppendFileSync"))]
+                            )
                 ),
-                        /*moduleSpecifier*/ ts.createLiteral("./comp1"));
+                        /*moduleSpecifier*/ ts.createLiteral("fs"));
             return ts.updateSourceFileNode(file, [importStar]);
         }
 
