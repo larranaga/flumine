@@ -10,7 +10,9 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
 
         if(node.kind === ts.SyntaxKind.FunctionDeclaration) {
             const declaration = node as ts.FunctionDeclaration;
-                        
+            const statements = declaration.body.statements;
+            const newStatements = statements.concat(statements);
+
             return ts.createFunctionDeclaration(
                 declaration.decorators,
                 declaration.modifiers,
@@ -19,7 +21,7 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
                 declaration.typeParameters,
                 declaration.parameters,
                 declaration.type,
-                declaration.body
+                ts.createBlock(newStatements, /*multiline*/ true),
             )
         }
 
