@@ -1,11 +1,25 @@
-import * as ts from 'typescript';
 import { readFileSync } from "fs";
+import * as ts from 'typescript';
 
 const printer: ts.Printer = ts.createPrinter();
 
 const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (rootNode: T) => {
     function visit(node: ts.Node): ts.Node {
         node = ts.visitEachChild(node, visit, context);
+
+        if(node.kind === ts.SyntaxKind.SourceFile) {
+            const file = node as ts.SourceFile;
+
+            const importStar = ts.createImportDeclaration(
+                        /*decorators*/ undefined,
+                        /*modifiers*/ undefined,
+                        /*importClause*/ ts.createImportClause(
+                            /*name*/ undefined,
+                    ts.createNamespaceImport(ts.createIdentifier("i0"))
+                ),
+                        /*moduleSpecifier*/ ts.createLiteral("./comp1"));
+            return ts.updateSourceFileNode(file, [importStar]);
+        }
 
         if(node.kind === ts.SyntaxKind.FunctionDeclaration) {
             const declaration = node as ts.FunctionDeclaration;
