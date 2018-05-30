@@ -22,7 +22,9 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
                             )
                 ),
                         /*moduleSpecifier*/ ts.createLiteral("fs"));
-            return ts.updateSourceFileNode(file, [importStar]);
+            
+            const newStatements = [importStar as ts.Statement].concat(file.statements);
+            return ts.updateSourceFileNode(file, newStatements);
         }
 
         if(node.kind === ts.SyntaxKind.FunctionDeclaration) {
@@ -54,6 +56,8 @@ fileNames.forEach(fileName => {
     let sourceFile = ts.createSourceFile(fileName, readFileSync(fileName).toString(), ts.ScriptTarget.ES2015, /*setParentNodes */ true);
 
     console.log(printer.printFile(sourceFile));
+
+    console.log("***********************");
 
     // Options may be passed to transform
     const result: ts.TransformationResult<ts.SourceFile> = ts.transform<ts.SourceFile>(
