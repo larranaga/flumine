@@ -30,7 +30,11 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
         if(node.kind === ts.SyntaxKind.FunctionDeclaration) {
             const declaration = node as ts.FunctionDeclaration;
             const statements = declaration.body.statements;
-            const newStatements = statements.concat(statements).concat(statements);
+
+            const info = {name: "declaration.name"}
+            const enterHook = ts.createCall(ts.createIdentifier("myEnterHook"), undefined, [ts.createLiteral(JSON.stringify(info))]);
+            const ent = ts.createStatement(enterHook);
+            const newStatements = [ent as ts.Statement].concat(statements);
 
             return ts.createFunctionDeclaration(
                 declaration.decorators,
