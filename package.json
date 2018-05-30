@@ -5,11 +5,14 @@
   "main": "out/main.js",
   "scripts": {
     "build": "tsc",
-    "start": "node out/main.js"
+    "start": "node out/main.js test/test0.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "typescript": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^10.1.4"
   }
 }

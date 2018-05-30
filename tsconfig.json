@@ -4,6 +4,9 @@
         "target": "es2015",
         "noImplicitAny": true,
         "sourceMap": true,
+        "lib": [
+            "es6"
+        ],
         "outDir": "out",
         "skipLibCheck": true,
         "skipDefaultLibCheck": true
