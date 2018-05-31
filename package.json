@@ -5,6 +5,7 @@
   "main": "out/main.js",
   "scripts": {
     "build": "tsc",
+    "build:watch": "tsc --watch",
     "start": "node out/src/main.js test/test0.ts"
   },
   "author": "",

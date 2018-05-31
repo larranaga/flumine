@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import * as ts from 'typescript';
 
 const printer: ts.Printer = ts.createPrinter();
@@ -17,11 +17,15 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
                             /*name*/ undefined,
                             ts.createNamedImports(
                                 [ts.createImportSpecifier
-                                    (ts.createIdentifier("appendFileSync"), 
-                                    ts.createIdentifier("myAppendFileSync"))]
+                                    (ts.createIdentifier("myEnterHook"), 
+                                    ts.createIdentifier("myEnterHook")),
+
+                                    ts.createImportSpecifier
+                                        (ts.createIdentifier("myExitHook"),
+                                        ts.createIdentifier("myExitHook"))]
                             )
                 ),
-                        /*moduleSpecifier*/ ts.createLiteral("fs"));
+                        /*moduleSpecifier*/ ts.createLiteral("./hooks"));
             
             const newStatements = [importStar as ts.Statement].concat(file.statements);
             return ts.updateSourceFileNode(file, newStatements);
@@ -77,9 +81,9 @@ fileNames.forEach(fileName => {
     // Parse a file
     let sourceFile = ts.createSourceFile(fileName, readFileSync(fileName).toString(), ts.ScriptTarget.ES2015, /*setParentNodes */ true);
 
-    console.log(printer.printFile(sourceFile));
+    //console.log(printer.printFile(sourceFile));
 
-    console.log("***********************");
+    //console.log("***********************");
 
     // Options may be passed to transform
     const result: ts.TransformationResult<ts.SourceFile> = ts.transform<ts.SourceFile>(
@@ -89,7 +93,7 @@ fileNames.forEach(fileName => {
     const transformedSourceFile: ts.SourceFile = result.transformed[0];
 
 
-    console.log(printer.printFile(transformedSourceFile));
-
+    const newContent = printer.printFile(transformedSourceFile);
+    writeFileSync("gen/" + fileName, newContent);
     result.dispose();
 });

@@ -4,4 +4,9 @@ function someFunction() {
     function someOtherFuncion() {
         console.log("That other function");
     }
+
+    someOtherFuncion();
+    someOtherFuncion();
 }
+
+someFunction();
