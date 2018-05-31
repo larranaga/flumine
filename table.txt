@@ -1,0 +1,18 @@
+{
+  "initial": {
+    "{\"name\":\"M\",\"position\":\"0\"}": 0,
+    "{\"name\":\"A\",\"position\":\"71\"}": 1,
+    "{\"name\":\"B\",\"position\":\"110\"}": 5,
+    "{\"name\":\"C\",\"position\":\"158\"}": 6,
+    "{\"name\":\"D\",\"position\":\"206\"}": 7,
+    "{\"name\":\"K\",\"position\":\"28\"}": 12
+  },
+  "final": {
+    "{\"name\":\"A\",\"position\":\"71\"}": 17,
+    "{\"name\":\"D\",\"position\":\"206\"}": 21,
+    "{\"name\":\"C\",\"position\":\"158\"}": 22,
+    "{\"name\":\"B\",\"position\":\"110\"}": 23,
+    "{\"name\":\"M\",\"position\":\"0\"}": 24,
+    "{\"name\":\"K\",\"position\":\"28\"}": 25
+  }
+}

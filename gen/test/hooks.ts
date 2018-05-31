@@ -1,23 +1,28 @@
-class Table {
-    private counter: number;
-    private initial: Map<any, any>;
-    private final: Map<any, any>;
-
-    public constructor() {
-        this.counter = 0;
-        this.initial = new Map();
-        this.final = new Map();
-    }
-}
+import { writeFileSync } from "fs";
 
 let counter = 0;
+let initial: any = {};
+let final: any = {};
+
+function update() {
+    writeFileSync("table.txt", JSON.stringify({
+            initial: initial,
+            final: final,
+        }, null, 2)
+    );
+}
 
 export function myEnterHook(methodInfo: any) {
-    console.log("Entered" + methodInfo + " c: " + counter);
+    if (! (methodInfo in initial) ){
+        initial[methodInfo] = counter;
+    }
+    console.log(JSON.stringify(initial))
     counter++;
+    update();
 }
 
 export function myExitHook(methodInfo: any) {
-    console.log("Exited" + methodInfo + " c: " + counter);
+    final[methodInfo] = counter;
     counter++;
+    update();
 }
