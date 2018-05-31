@@ -1,4 +1,4 @@
-function M(){
+export function M(){
     console.log("M");
     A();
     A();
