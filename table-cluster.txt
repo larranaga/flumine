@@ -1,0 +1,124 @@
+{
+  "sets": {
+    "averageLink": [
+      "averageLink",
+      "fromClusterDistance",
+      "fromPointsMatrix",
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "fromClusterDistance": [
+      "fromClusterDistance",
+      "fromPointsMatrix",
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "fromPointsMatrix": [
+      "fromPointsMatrix",
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "ward": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "euclidean": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "reducedClusters": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "mergedClusters": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "clusterArrayRep": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "clusterRep": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ],
+    "instanceRep": [
+      "ward",
+      "euclidean",
+      "reducedClusters",
+      "mergedClusters",
+      "clusterArrayRep",
+      "clusterRep",
+      "instanceRep"
+    ]
+  },
+  "initial": {
+    "averageLink": 1,
+    "fromClusterDistance": 3,
+    "fromPointsMatrix": 5,
+    "ward": 45,
+    "euclidean": 46,
+    "reducedClusters": 1565,
+    "mergedClusters": 1566,
+    "clusterArrayRep": 1569,
+    "clusterRep": 1571,
+    "instanceRep": 1573
+  },
+  "final": {
+    "averageLink": 2,
+    "fromClusterDistance": 4,
+    "fromPointsMatrix": 44,
+    "euclidean": 25209,
+    "ward": 25210,
+    "mergedClusters": 25213,
+    "reducedClusters": 25214,
+    "clusterArrayRep": 25216,
+    "clusterRep": 25218,
+    "instanceRep": 25258
+  }
+}
