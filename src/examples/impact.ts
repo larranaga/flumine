@@ -83,7 +83,7 @@ fileNames.forEach(fileName => {
 
     //console.log(printer.printFile(sourceFile));
 
-    //console.log("***********************");
+    console.log(fileName);
 
     // Options may be passed to transform
     const result: ts.TransformationResult<ts.SourceFile> = ts.transform<ts.SourceFile>(

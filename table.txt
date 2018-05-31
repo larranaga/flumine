@@ -1,50 +1,27 @@
 {
   "sets": {
-    "M": [
-      "M",
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "A": [
-      "M",
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
-    "B": [
-      "M",
-      "B",
-      "C",
-      "D"
-    ],
-    "C": [
-      "M",
-      "B",
-      "C",
-      "D"
-    ],
-    "D": [
-      "M",
-      "B",
-      "C",
-      "D"
-    ]
+    "averageLink": [],
+    "fromClusterDistance": [],
+    "fromPointsMatrix": [],
+    "ward": [],
+    "euclidean": [],
+    "reducedClusters": [],
+    "mergedClusters": [],
+    "clusterArrayRep": [],
+    "clusterRep": [],
+    "instanceRep": []
   },
   "initial": {
-    "M": 1,
-    "A": 2,
-    "B": 6,
-    "C": 7,
-    "D": 8
+    "averageLink": 1,
+    "fromClusterDistance": 2,
+    "fromPointsMatrix": 3,
+    "ward": 23,
+    "euclidean": 24,
+    "reducedClusters": 783,
+    "mergedClusters": 784,
+    "clusterArrayRep": 785,
+    "clusterRep": 786,
+    "instanceRep": 787
   },
-  "final": {
-    "A": 5,
-    "D": 9,
-    "C": 10,
-    "B": 11,
-    "M": 12
-  }
+  "final": {}
 }
