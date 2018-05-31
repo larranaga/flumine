@@ -1,6 +1,6 @@
 import { writeFileSync } from "fs";
 
-let counter = 0;
+let counter = 1;
 let initial: any = {};
 let final: any = {};
 
