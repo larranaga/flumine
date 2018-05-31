@@ -4,29 +4,29 @@ export function M() {
     console.log("M");
     A();
     A();
-    B();
     myExitHook("{\"name\":\"M\",\"position\":\"0\"}");
+    B();
 }
 function A() {
     myEnterHook("{\"name\":\"A\",\"position\":\"71\"}");
-    console.log("A");
     myExitHook("{\"name\":\"A\",\"position\":\"71\"}");
+    console.log("A");
 }
 function B() {
     myEnterHook("{\"name\":\"B\",\"position\":\"110\"}");
     console.log("B");
-    C();
     myExitHook("{\"name\":\"B\",\"position\":\"110\"}");
+    C();
 }
 function C() {
     myEnterHook("{\"name\":\"C\",\"position\":\"158\"}");
     console.log("C");
-    D();
     myExitHook("{\"name\":\"C\",\"position\":\"158\"}");
+    D();
 }
 function D() {
     myEnterHook("{\"name\":\"D\",\"position\":\"206\"}");
-    console.log("D");
     myExitHook("{\"name\":\"D\",\"position\":\"206\"}");
+    console.log("D");
 }
 M();

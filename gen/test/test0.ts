@@ -4,11 +4,11 @@ function someFunction() {
     console.log("Hello!!");
     function someOtherFuncion() {
         myEnterHook("{\"name\":\"someOtherFuncion\",\"position\":\"54\"}");
-        console.log("That other function");
         myExitHook("{\"name\":\"someOtherFuncion\",\"position\":\"54\"}");
+        console.log("That other function");
     }
     someOtherFuncion();
-    someOtherFuncion();
     myExitHook("{\"name\":\"someFunction\",\"position\":\"0\"}");
+    someOtherFuncion();
 }
 someFunction();

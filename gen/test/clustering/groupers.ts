@@ -7,8 +7,8 @@ export interface Grouper {
 }
 export function fromClusterDistance(distance: ClusterDistance): Grouper {
     myEnterHook("{\"name\":\"fromClusterDistance\",\"position\":\"235\"}");
-    return new GrouperImp(distance);
     myExitHook("{\"name\":\"fromClusterDistance\",\"position\":\"235\"}");
+    return new GrouperImp(distance);
 }
 class GrouperImp implements Grouper {
     private distance: ClusterDistance;

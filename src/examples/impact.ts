@@ -42,7 +42,7 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
             const ent = ts.createStatement(enterHook);
 
             const exitHook = ts.createCall(ts.createIdentifier("myExitHook"), undefined, [ts.createLiteral(JSON.stringify(info))]);
-            const newStatements = [ent as ts.Statement].concat(statements).concat([ts.createStatement(exitHook)]);
+            const newStatements = [ent as ts.Statement].concat(statements.slice(0, statements.length - 1)).concat([ts.createStatement(exitHook)]).concat([statements[statements.length -1]]);
 
             return ts.createFunctionDeclaration(
                 declaration.decorators,

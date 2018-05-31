@@ -7,10 +7,10 @@ let group_0: number[] = [];
 let group_1: number[] = [];
 function centroid_change() {
     myEnterHook("{\"name\":\"centroid_change\",\"position\":\"187\"}");
+    myExitHook("{\"name\":\"centroid_change\",\"position\":\"187\"}");
     return centroids.reduce((maxSoFar, value, index) => {
         return Math.max(maxSoFar, Math.abs(value - new_centroids[index]));
     }, 0);
-    myExitHook("{\"name\":\"centroid_change\",\"position\":\"187\"}");
 }
 while (true) {
     number_of_iterations += 1;

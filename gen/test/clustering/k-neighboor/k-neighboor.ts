@@ -20,8 +20,8 @@ function nearestCluster(cluster: Cluster): number | null {
             nearest = index;
         }
     });
-    return nearest;
     myExitHook("{\"name\":\"nearestCluster\",\"position\":\"535\"}");
+    return nearest;
 }
 initialClusters.forEach((singleCluster, index) => {
     let nearestIndex = nearestCluster(singleCluster);

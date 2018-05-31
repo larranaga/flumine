@@ -6,8 +6,8 @@ export function euclidean(data1: DataInstance, data2: DataInstance): number {
     const squaredDistance = data1.data.reduce((acc, value, index) => {
         return acc + (value - data2.data[index]) * (value - data2.data[index]);
     }, 0);
-    return Math.sqrt(squaredDistance);
     myExitHook("{\"name\":\"euclidean\",\"position\":\"135\"}");
+    return Math.sqrt(squaredDistance);
 }
 export function rao(data1: DataInstance, data2: DataInstance): number {
     myEnterHook("{\"name\":\"rao\",\"position\":\"420\"}");
@@ -18,8 +18,8 @@ export function rao(data1: DataInstance, data2: DataInstance): number {
             oneCoincidences += 1;
         }
     });
-    return 1 - (oneCoincidences / data1.data.length);
     myExitHook("{\"name\":\"rao\",\"position\":\"420\"}");
+    return 1 - (oneCoincidences / data1.data.length);
 }
 export function simpleMatchingCoefficient(data1: DataInstance, data2: DataInstance): number {
     myEnterHook("{\"name\":\"simpleMatchingCoefficient\",\"position\":\"770\"}");
@@ -30,12 +30,12 @@ export function simpleMatchingCoefficient(data1: DataInstance, data2: DataInstan
             oneCoincidences += 1;
         }
     });
-    return 1 - (oneCoincidences / data1.data.length);
     myExitHook("{\"name\":\"simpleMatchingCoefficient\",\"position\":\"770\"}");
+    return 1 - (oneCoincidences / data1.data.length);
 }
 export function ward(data1: DataInstance, data2: DataInstance): number {
     myEnterHook("{\"name\":\"ward\",\"position\":\"1126\"}");
     const euclideanDistance = euclidean(data1, data2);
-    return euclideanDistance * euclideanDistance;
     myExitHook("{\"name\":\"ward\",\"position\":\"1126\"}");
+    return euclideanDistance * euclideanDistance;
 }

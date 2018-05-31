@@ -13,8 +13,8 @@ export function singleLink(pointDistance: DistanceFunction): ClusterDistance {
         });
         return minDistance;
     };
-    return SingleLinkImp;
     myExitHook("{\"name\":\"singleLink\",\"position\":\"164\"}");
+    return SingleLinkImp;
 }
 export function completeLink(pointDistance: DistanceFunction): ClusterDistance {
     myEnterHook("{\"name\":\"completeLink\",\"position\":\"674\"}");
@@ -27,8 +27,8 @@ export function completeLink(pointDistance: DistanceFunction): ClusterDistance {
         });
         return maxDistance;
     };
-    return completeLinkImp;
     myExitHook("{\"name\":\"completeLink\",\"position\":\"674\"}");
+    return completeLinkImp;
 }
 export function averageLink(pointDistance: DistanceFunction): ClusterDistance {
     myEnterHook("{\"name\":\"averageLink\",\"position\":\"1175\"}");
@@ -41,14 +41,14 @@ export function averageLink(pointDistance: DistanceFunction): ClusterDistance {
         });
         return sumOfDistances / (cluster1.size() * cluster2.size());
     };
-    return averageLinkImp;
     myExitHook("{\"name\":\"averageLink\",\"position\":\"1175\"}");
+    return averageLinkImp;
 }
 export function centroidLink(pointDistance: DistanceFunction): ClusterDistance {
     myEnterHook("{\"name\":\"centroidLink\",\"position\":\"1693\"}");
     const centroidLinkImp: ClusterDistance = (cluster1: Cluster, cluster2: Cluster) => {
         return pointDistance(cluster1.centroid(), cluster2.centroid());
     };
-    return centroidLinkImp;
     myExitHook("{\"name\":\"centroidLink\",\"position\":\"1693\"}");
+    return centroidLinkImp;
 }
