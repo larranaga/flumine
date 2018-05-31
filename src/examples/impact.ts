@@ -51,6 +51,20 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
             )
         }
 
+        // if(node.kind === ts.SyntaxKind.FunctionExpression) {
+        //     const expr = node as ts.FunctionExpression;
+
+        //     return ts.createFunctionExpression(
+        //         expr.modifiers,
+        //         expr.asteriskToken,
+        //         expr.name,
+        //         expr.typeParameters,
+        //         expr.parameters,
+        //         expr.type,
+        //         expr.body
+        //     )
+        // }
+
         return node;
     }
 
