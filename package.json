@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "start": "node out/src/main.js test/test0.ts"
+    "start": "node out/src/main.js"
   },
   "author": "",
   "license": "ISC",
