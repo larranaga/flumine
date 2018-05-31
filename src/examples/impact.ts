@@ -6,7 +6,6 @@ const printer: ts.Printer = ts.createPrinter();
 const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (rootNode: T) => {
     function visit(node: ts.Node): ts.Node {
         node = ts.visitEachChild(node, visit, context);
-        console.log("Visiting " + ts.SyntaxKind[node.kind]);
 
         if(node.kind === ts.SyntaxKind.SourceFile) {
             const file = node as ts.SourceFile;
@@ -37,7 +36,9 @@ const transformer = <T extends ts.Node>(context: ts.TransformationContext) => (r
             const info = {name: name, position: JSON.stringify(declaration.pos)}
             const enterHook = ts.createCall(ts.createIdentifier("myEnterHook"), undefined, [ts.createLiteral(JSON.stringify(info))]);
             const ent = ts.createStatement(enterHook);
-            const newStatements = [ent as ts.Statement].concat(statements);
+
+            const exitHook = ts.createCall(ts.createIdentifier("myExitHook"), undefined, [ts.createLiteral(JSON.stringify(info))]);
+            const newStatements = [ent as ts.Statement].concat(statements).concat([ts.createStatement(exitHook)]);
 
             return ts.createFunctionDeclaration(
                 declaration.decorators,
